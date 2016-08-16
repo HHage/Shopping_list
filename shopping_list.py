@@ -2,14 +2,33 @@
 
 grocery_list= ["Apples", "Oranges", "Milk", "Strawberries"]
 grocery_list.sort() #This Works!
-print grocery_list
+print "Welcome, your items are", grocery_list
+
 def add_items(new_item):
-	if new_item in grocery_list== True:
-		print "This item is already in your list."
+	while(True):
+		print "Type exit to exit"
+		print "your items are", grocery_list
+		# new_item= raw_input("What item would you like to add? ")
+		if (new_item=="exit"):
+			break
+		elif new_item in grocery_list== True:
+			print "This item is already in your list."
+		else:
+			grocery_list.append(new_item)
+			grocery_list.sort()
+			print grocery_list
+			
+def del_item(remove_item):
+	if  remove_item in grocery_list == True:
+			grocery_list.remove(remove_item)
+			grocery_list.sort()
+			print grocery_list.sort()
 	else:
-		grocery_list.append(new_item)
+		print "This item is not on your list."
 		grocery_list.sort()
 		print grocery_list
+
+
 
 
 
@@ -17,10 +36,15 @@ def add_items(new_item):
 	# 	raw_input("What would you like to add to your shopping list?")
 	# 		if 
 
-decision=raw_input("Would you like to add an item?")
+decision=raw_input("Would you like to add an item? ")
 if decision.lower() == "yes".lower():
-	new_item=raw_input("What item would you like to add?")
+	new_item=raw_input("What item would you like to add? ")
 	add_items(new_item)
+
+remove_decision=raw_input("Would you like to remove an item? ")
+if remove_decision.lower()== "yes".lower():
+	remove_item=raw_input("What item would you like to remove? ")
+	del_item(remove_decision)
 
 	
 
@@ -30,6 +54,11 @@ if decision.lower() == "yes".lower():
 
 # del grocery_list[2]
 # print grocery_list
+
+# elif line 14 being glossed over
+
+#line 23-26 not are being glosses over to else statement
+#line 
 
 
 
